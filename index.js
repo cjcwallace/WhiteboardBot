@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
+const config = require('./config.json');
 
 console.log(client);
 
@@ -80,5 +81,5 @@ var weeklyMeeting = schedule.scheduleJob(dailyCodingSchedule, function() {
   }});
 });
 
-client.login('NzY3NTU5NDM2Mzc2OTk3ODk4.X4zrbg.KQziExxY8ca2yPyb3B3oM4fpOso');
+client.login(config.token);
 //https://leetcode.com/problems/random-one-question/all
