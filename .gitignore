@@ -2,3 +2,5 @@
 
 config.json
 .env
+/announcements/dailyCodingProblem.js
+/announcements/weeklyClubAnnouncement.js
