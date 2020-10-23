@@ -1,6 +1,7 @@
 const schedule = require('node-schedule');
 const fetch = require("node-fetch");
 
+/** Daily Coding Question Announcement */
 var dailyCodingSchedule = new schedule.RecurrenceRule();
 dailyCodingSchedule.dayOfWeek = new schedule.Range(1, 5);
 dailyCodingSchedule.hour = 11;
@@ -23,13 +24,13 @@ const clubDayStr = [" We look forward to seeing all of you!", " Hopefully you ca
 
 var methods = {
     dcq: function() {
-      const chan1 = client.channels.cache.get(testChannel);
       var d = new Date();
       var month = monthNames[d.getMonth()];
       var day = d.getDate();
       var year = d.getFullYear();
     
       (async () => {
+        const chan1 = client.channels.cache.get(testChannel);
         const response = await fetch('https://leetcode.com/problems/random-one-question/all');
         var finalURL = response.url;
         var problemTitle = finalURL.toString();
@@ -51,13 +52,15 @@ var methods = {
       })();
     },
     wms: function() {
-        const chan2 = client.channels.cache.get(testChannel);
         var rand = Math.floor(Math.random() * clubDayStr.length);
-        chan2.send('@everyone')
-        chan2.send({embed: {
-            color: 3447003,
-            title: 'Reminder that we have club today at 3pm!' + clubDayStr[rand]
-        }});
+        (async () => {
+            const chan2 = client.channels.cache.get(testChannel);
+            chan2.send('@everyone');
+            chan2.send({embed: {
+                color: 3447003,
+                title: 'Reminder that we have club today at 3pm!' + clubDayStr[rand]
+            }});
+        })();
     }
   }
 
