@@ -87,7 +87,7 @@ dailyCodingSchedule.dayOfWeek = new schedule.Range(1, 5);
 dailyCodingSchedule.hour = 11;
 dailyCodingSchedule.minute = 0;
 
-var dcq = schedule.scheduleJob('20 * * * * *', function() {
+var dcq = schedule.scheduleJob(dailyCodingSchedule, function() {
   announcements.methods.dcq();
 });
 
@@ -99,6 +99,6 @@ var wca = schedule.scheduleJob({hour: 12, minute: 0, dayOfWeek: 4}, function() {
 require('./commands/done.js');
 require('./commands/completed.js');
 require('./commands/reset.js');
-require('./annoucements/announcements.js');
+//require('./annoucements/announcements.js');
 
 client.login(token);

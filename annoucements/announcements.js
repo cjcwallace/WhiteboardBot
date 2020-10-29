@@ -2,10 +2,6 @@ const schedule = require('node-schedule');
 const fetch = require("node-fetch");
 
 /** Daily Coding Question Announcement */
-var dailyCodingSchedule = new schedule.RecurrenceRule();
-dailyCodingSchedule.dayOfWeek = new schedule.Range(1, 5);
-dailyCodingSchedule.hour = 11;
-dailyCodingSchedule.minute = 0;
 const monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
 ];
@@ -14,10 +10,6 @@ const dailyEncouragement = ["Good luck!", "This might be a tough one.", "Let us 
 ];
 
 /** Weekly Meeting Scheduling Announcement */
-var weeklyMeetingSchedule = require('node-schedule');
-weeklyMeetingSchedule.dayOfWeek = 4;
-weeklyMeetingSchedule.hour = 12;
-weeklyMeetingSchedule.minute = 0;
 const clubDayStr = [" We look forward to seeing all of you!", " Hopefully you can make it!",
   " Who's ready to solve some problems? :sunglasses:"
 ];
@@ -45,10 +37,10 @@ var methods = {
         chan1.send({embed: {
           color: 3447003,
           title: 'Coding Problem for ' + month + ' ' +  day + ', ' + year,
-          description: 'Problem: '+problemTitle+'\n'+dailyEncouragement[rand],
-          url: finalURL+''
+          description: 'Problem: ' + problemTitle + '\n' + dailyEncouragement[rand],
+          url: finalURL + ''
         }});
-        console.log(d.getSeconds());
+        console.log('seconds:' + d.getSeconds());
       })();
     },
     wms: function() {
