@@ -39,9 +39,11 @@ const sql = new SQLite('database/db.sqlite')
 const testChannel = '767576275148603432';
 const generalChannel = '687080403898859523';
 const dailyCodingChannel = '692974289464590417';
+const annoucementChannel = '692974325661302784';
 global.testChannel = testChannel;
 global.generalChannel = generalChannel;
 global.dailyCodingChannel = dailyCodingChannel;
+global.annoucementChannel = annoucementChannel;
 
 
 client.on('ready', () => {
@@ -85,7 +87,7 @@ const announcements = require('./annoucements/announcements');
 var dailyCodingSchedule = new schedule.RecurrenceRule();
 dailyCodingSchedule.dayOfWeek = new schedule.Range(1, 5);
 dailyCodingSchedule.hour = 11;
-dailyCodingSchedule.minute = 0;
+dailyCodingSchedule.minute = 7;
 
 var dcq = schedule.scheduleJob(dailyCodingSchedule, function() {
   announcements.methods.dcq();

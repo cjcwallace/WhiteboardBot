@@ -19,9 +19,9 @@ module.exports = {
             }
         }
         if (score.points == 1) {
-            msg = `${message.author.username} has ${score.points} point!`;
+            msg = `${message.member.displayName} has ${score.points} point!`;
         } else {
-            msg = `${message.author.username} has ${score.points} points!`;
+            msg = `${message.member.displayName} has ${score.points} points!`;
         }
         message.channel.send(msg);
         console.log(`!completed ${message.author.id} points: ${score.points}`);

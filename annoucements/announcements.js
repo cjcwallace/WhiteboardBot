@@ -22,7 +22,7 @@ var methods = {
       var year = d.getFullYear();
     
       (async () => {
-        const chan1 = client.channels.cache.get(testChannel);
+        const chan1 = client.channels.cache.get(dailyCodingChannel);
         const response = await fetch('https://leetcode.com/problems/random-one-question/all');
         var finalURL = response.url;
         var problemTitle = finalURL.toString();
@@ -46,7 +46,7 @@ var methods = {
     wms: function() {
         var rand = Math.floor(Math.random() * clubDayStr.length);
         (async () => {
-            const chan2 = client.channels.cache.get(testChannel);
+            const chan2 = client.channels.cache.get(annoucementChannel);
             chan2.send('@everyone');
             chan2.send({embed: {
                 color: 3447003,

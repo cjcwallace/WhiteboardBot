@@ -25,7 +25,10 @@ module.exports = {
                 message.channel.send("You have already answered todays question, come back tomorrow!");
             }
         } else {
+            //let guild = client.guilds.get('687080403898859520');
             let member = message.author.id;
+            //let memberName = guild.member(message.author);
+            //let nickname = memberName ? memberName.displayName : null; 
             let score;
             if (message.guild) {
                 score = client.getScore.get(message.author.id, message.guild.id);
@@ -38,9 +41,9 @@ module.exports = {
             var rand = Math.floor(Math.random() * strs.length);
             var msg;
             if (score.points == 1) {
-                msg = strs[rand] + ` ${message.author.username} has completed ${score.points} problem.`;
+                msg = strs[rand] + ` ${message.member.displayName} has completed ${score.points} problem.`;
             } else {
-                msg = strs[rand] + ` ${message.author.username} has completed ${score.points} problems.`;
+                msg = strs[rand] + ` ${message.member.displayName} has completed ${score.points} problems.`;
             }
             message.channel.send(msg);
             console.log(`!done ${message.author.id} points: ${score.points}`);

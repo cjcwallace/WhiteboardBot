@@ -1,7 +1,15 @@
 # Config files
-
-config.json
+/config.json
 .env
-/announcements/dailyCodingProblem.js
-/announcements/weeklyClubAnnouncement.js
-/node_modules/
+
+# Files
+dailyCodingProblem.js
+weeklyClubAnnouncement.js
+bot.zip
+
+# File types
+*.zip
+
+# Folders
+database/
+node_modules/
