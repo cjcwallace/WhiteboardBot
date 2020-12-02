@@ -9,6 +9,7 @@ bot.zip
 
 # File types
 *.zip
+*.pem
 
 # Folders
 database/

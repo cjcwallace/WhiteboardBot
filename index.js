@@ -87,7 +87,7 @@ const announcements = require('./annoucements/announcements');
 var dailyCodingSchedule = new schedule.RecurrenceRule();
 dailyCodingSchedule.dayOfWeek = new schedule.Range(1, 5);
 dailyCodingSchedule.hour = 11;
-dailyCodingSchedule.minute = 7;
+dailyCodingSchedule.minute = 2;
 
 var dcq = schedule.scheduleJob(dailyCodingSchedule, function() {
   announcements.methods.dcq();
