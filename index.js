@@ -93,10 +93,11 @@ var dcq = schedule.scheduleJob(dailyCodingSchedule, function() {
   announcements.methods.dcq();
 });
 
-/** Weekly Meeting Scheduling Announcement */
+/** Weekly Meeting Scheduling Announcement
 var wca = schedule.scheduleJob({hour: 12, minute: 0, dayOfWeek: 4}, function() {
   announcements.methods.wms();
 });
+ */
 
 require('./commands/done.js');
 require('./commands/completed.js');
