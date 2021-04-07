@@ -87,17 +87,17 @@ const announcements = require('./annoucements/announcements');
 var dailyCodingSchedule = new schedule.RecurrenceRule();
 dailyCodingSchedule.dayOfWeek = new schedule.Range(1, 5);
 dailyCodingSchedule.hour = 11;
-dailyCodingSchedule.minute = 2;
+dailyCodingSchedule.minute = 0;
 
 var dcq = schedule.scheduleJob(dailyCodingSchedule, function() {
   announcements.methods.dcq();
 });
 
-/** Weekly Meeting Scheduling Announcement
-var wca = schedule.scheduleJob({hour: 12, minute: 0, dayOfWeek: 4}, function() {
+/** Weekly Meeting Scheduling Announcement 
+var wca = schedule.scheduleJob({hour: 12, minute: 0, dayOfWeek: 2}, function() {
   announcements.methods.wms();
 });
- */
+*/
 
 require('./commands/done.js');
 require('./commands/completed.js');
